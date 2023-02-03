@@ -36,24 +36,22 @@ export class AppComponent {
       const csvText = reader.result;
       console.log('csv', csvText);
       let csvToRowArray1 = csvText.toString().split('\n');
+      console.log(csvToRowArray1);
       for (let index = 1; index < csvToRowArray1.length - 1; index++) {
         let row = csvToRowArray1[index].split(',');
-        this.userArray1.push(
-          new User(parseInt(row[0], 10), row[1], row[2].trim())
-        );
+        this.userArray1.push(new User(row[0], row[1], row[2].trim()));
       }
     };
   }
 }
 
 export class User {
-  id: number;
   name: String;
-  lastName: String;
-
-  constructor(id: number, name: String, lastName: String) {
-    this.id = id;
+  email: String;
+  mobile: String;
+  constructor(name: String, email: String, mobile: string) {
     this.name = name;
-    this.lastName = lastName;
+    this.email = email;
+    this.mobile = mobile;
   }
 }
