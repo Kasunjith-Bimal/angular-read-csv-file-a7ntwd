@@ -1,0 +1,11 @@
+Look at the console
+<input type="file" (change)="handleFileInput($event.target.files)" />
+
+<li *ngFor="let user of userArray">
+  {{ user | json }}
+</li>
+<div *ngIf="userArray1">
+  <li *ngFor="let user of userArray1">
+    {{ user | json }}
+  </li>
+</div>
